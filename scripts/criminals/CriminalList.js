@@ -1,8 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
-import { getOfficers, useOfficers } from "./OfficerProvider.js"
-import { Officer } from "./Officer.js"
+import { getOfficers, useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
 const officersContainer = document.querySelector(".officersContainer")

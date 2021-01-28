@@ -1,6 +1,9 @@
 import { getOfficers, useOfficers } from "./OfficerProvider.js"
+import { Officer } from "./Officer.js"
+import { useConvictions } from "../convictions/ConvictionProvider.js"
 
 const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".filters__officer")
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
