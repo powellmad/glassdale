@@ -1,10 +1,10 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
-import { getOfficers, useOfficers } from "../officers/OfficerProvider.js"
+import { useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
-const officersContainer = document.querySelector(".officersContainer")
+const officersContainer = document.querySelector(".filters__officer")
 const criminalContainer = document.querySelector(".criminalContainer")
 
 export const CriminalList = () => {
@@ -35,37 +35,24 @@ eventHub.addEventListener("crimeChosen", event => {
       console.log("currently on", convictionObj)
       return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
     })
-    console.log(chosenConvictionObject.name)
 
     const criminalsArray = useCriminals()
-    const filteredCriminalsArray = criminalsArray.filter(criminalObj => { 
+    const filteredByConviction = criminalsArray.filter(criminalObj => { 
       return criminalObj.conviction === chosenConvictionObject.name
     })
 
-    renderToDOM(filteredCriminalsArray)
+    renderToDOM(filteredByConviction)
   }
 })
 
-const render = officerCollection => {
-  contentTarget.innerHTML = `
-      <select class="dropdown" id="officerSelect">
-          <option value="0">Please select an officer...</option>
-          ${
-              officerCollection.map(officer => {
-                  return `<option value="${officer.name}">${officer.name}</option>`
-              }).join("")
-          }
-      </select>
-  `
-}
+eventHub.addEventListener("officerSelected", event => {
+  // console.log(event)
+    if (event.detail.officer !== "0") {
 
-eventHub.addEventListener("officerSelect", event => {
-  if (event.detail.officerChosen !== "0") {
-    const officerArray = useOfficers()
-    const chosenOfficerObject = officerArray.filter(officerObj => {
-      console.log("currently on", officerArray)
-      return chosenOfficerObject.name === officerChosen.name
-  })
-  render(chosenOfficerObject) 
-}
+    const criminalsArray = useCriminals()
+    const filteredbyOfficer = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === event.detail.officer )
+
+    renderToDOM(filteredbyOfficer) 
+    }
+    
 })

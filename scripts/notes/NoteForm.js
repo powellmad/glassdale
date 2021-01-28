@@ -1,4 +1,4 @@
-const contentTarget = document.querySelector(".noteFormContainer")
+const contentTarget = document.getElementById("noteFormContainer")
 
 const render = () => {
     contentTarget.innerHTML = `
@@ -14,6 +14,21 @@ const render = () => {
     <button id="saveNote">Save Note</button>
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveNote") {
+        const date = document.getElementById("note-date").value
+        const suspect = document.getElementById("note-suspect").value
+        const text = document.getElementById("note-text").value
+        
+        const newNote = {
+            Date: date,
+            Suspect: suspect,
+            Text: text
+        }
+        saveNote(newNote)
+    }
+})
 
 export const NoteForm = () => {
     render()
