@@ -1,9 +1,10 @@
 export const Criminal = (criminalObj) => {
     return `
         <div class="criminal">
-            <h4>${criminalObj.name}</h4>
-            <p>${criminalObj.age}</p>
-            <p>${criminalObj.conviction}</p>
+            <h4>Name:${criminalObj.name}</h4>
+            <p>Age:${criminalObj.age}</p>
+            <p>Conviction:${criminalObj.conviction}</p>
+            <p>${criminalObj.arrestingOfficer}</p>
             <p>${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
             <p>${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
         </div>

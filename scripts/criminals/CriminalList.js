@@ -1,8 +1,11 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { getOfficers, useOfficers } from "./OfficerProvider.js"
+import { Officer } from "./Officer.js"
 
 const eventHub = document.querySelector(".container")
+const officersContainer = document.querySelector(".officersContainer")
 const criminalContainer = document.querySelector(".criminalContainer")
 
 export const CriminalList = () => {
@@ -42,4 +45,28 @@ eventHub.addEventListener("crimeChosen", event => {
 
     renderToDOM(filteredCriminalsArray)
   }
+})
+
+const render = officerCollection => {
+  contentTarget.innerHTML = `
+      <select class="dropdown" id="officerSelect">
+          <option value="0">Please select an officer...</option>
+          ${
+              officerCollection.map(officer => {
+                  return `<option value="${officer.name}">${officer.name}</option>`
+              }).join("")
+          }
+      </select>
+  `
+}
+
+eventHub.addEventListener("officerSelect", event => {
+  if (event.detail.officerChosen !== "0") {
+    const officerArray = useOfficers()
+    const chosenOfficerObject = officerArray.filter(officerObj => {
+      console.log("currently on", officerArray)
+      return chosenOfficerObject.name === officerChosen.name
+  })
+  render(chosenOfficerObject) 
+}
 })
