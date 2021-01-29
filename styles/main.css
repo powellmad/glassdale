@@ -1,21 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
-
-/*Typography
---------------------------------------------------------------*/
+/* Typography
+-------------------------------------------------------------- */
 body,
 button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: "Comfortaa", Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.5;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Patua One", serif;
-  letter-spacing: 2px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .criminalList {
@@ -25,15 +22,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .criminalList div {
-	border: 2px solid black;
+	border: 1px dotted black;
 	padding: 15px;
-	margin: 20px;
-	width: 300px;
-	justify-content: center;
+	margin: 10px;
+	width: 230px;
 }
 
 .criminalList p {
-	margin: 1px;
+	margin: 0px;
 }
 
 h3 {
@@ -51,3 +47,23 @@ select {
 	padding: 3px;
 	margin: 3px;
 }
+
+label {
+	font-weight: bold;
+}
+
+/* .note-entry {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 3px;
+	width: 25%;
+} */
+
+/* .note-entry input {
+	margin: 3px;
+}
+
+button {
+	width: 50%;
+	margin: 3px;
+} */

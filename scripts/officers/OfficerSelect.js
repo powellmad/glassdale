@@ -4,7 +4,6 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__officer")
 
 eventHub.addEventListener("change", changeEvent => {
-    console.log(changeEvent)
     if (changeEvent.target.id === "officerSelect") {
 
         const selectedOfficer = changeEvent.target.value
@@ -21,8 +20,8 @@ eventHub.addEventListener("change", changeEvent => {
 export const OfficerSelect = () => {
     getOfficers()
     .then( () => {
-      const officersArray = useOfficers()
-      render(officersArray)
+        const officersArray = useOfficers()
+        render(officersArray)
     })
 }
 
