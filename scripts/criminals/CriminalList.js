@@ -1,10 +1,8 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
-import { useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
-const officersContainer = document.querySelector(".filters__officer")
 const criminalContainer = document.querySelector(".criminalContainer")
 
 export const CriminalList = () => {
@@ -50,7 +48,7 @@ eventHub.addEventListener("officerSelected", event => {
     if (event.detail.officer !== "0") {
 
     const criminalsArray = useCriminals()
-    const filteredbyOfficer = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === event.detail.officer )
+    const filteredbyOfficer = criminalsArray.filter(criminalObj => criminalObj.arrestingOfficer === event.detail.officer)
 
     renderToDOM(filteredbyOfficer) 
     }
