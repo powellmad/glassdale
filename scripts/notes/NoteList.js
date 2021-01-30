@@ -5,13 +5,12 @@ const contentTarget = document.querySelector(".noteList")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("showNotesClicked", customEvent => {
-    if (customEvent !== 0) {
-        console.log("HELL YEAH!")
+    customEvent("ShowNotesClicked" = () => {
         const allNotesinHTMLForm = NoteList()
         contentTarget.innerHTML = `
         ${allNotesinHTMLForm}
         `
-    }
+    })
 })
 
 const render = (noteArray) => {
