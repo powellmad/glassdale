@@ -14,20 +14,21 @@ eventHub.addEventListener("change", changeEvent => {
         eventHub.dispatchEvent(customEvent)
     }
 })
-      
+
 export const ConvictionSelect = () => {
 
     getConvictions()
     .then( () => {
-      const convictionsArray = useConvictions()
-      render(convictionsArray)
+        const convictionsArray = useConvictions()
+        render(convictionsArray)
     })
 }
 
 const render = convictionsCollection => {
     
     contentTarget.innerHTML = `
-        <select class="dropdown" id="crimeSelect">
+    <p>Filter by:</p>    
+    <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${
                 convictionsCollection.map(conviction => `<option value="${conviction.id}">${conviction.name}</option>`).join("")

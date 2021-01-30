@@ -1,3 +1,18 @@
 {
-    "notes": []
+  "notes": [
+    {
+      "Date": "",
+      "Suspect": "",
+      "Author": "",
+      "Text": "test",
+      "id": 1
+    },
+    {
+      "Date": "2021-01-29",
+      "Suspect": "Fritz",
+      "Author": "Mad",
+      "Text": "He is looking pretty suspicious",
+      "id": 2
+    }
+  ]
 }
