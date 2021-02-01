@@ -6,6 +6,7 @@ const contentTarget = document.querySelector(".noteFormContainer")
 const render = () => {
     
     contentTarget.innerHTML = `
+    <h4>Create a Note:</h4>
     <label for="note-date">Date:</label>
     <input type="date" id="note-date">
 
@@ -35,10 +36,10 @@ eventHub.addEventListener("click", clickEvent => {
         const text = document.getElementById("note-text").value
         
         const newNote = {
-            Date: date,
-            Suspect: suspect,
-            Author: author,
-            Text: text
+            date: date,
+            suspect: suspect,
+            author: author,
+            text: text
         }
         saveNote(newNote)
     }

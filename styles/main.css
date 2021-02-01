@@ -50,12 +50,33 @@ select {
 	margin: 3px;
 }
 
-
-
 button {
 	margin: 3px 0;
 }
 
 p {
 	margin: 0 3px;
+}
+
+.container__flex {
+	display: flex;
+	justify-content: space-around;
+}
+.criminalContainer{
+	width: 69%;
+}
+
+.noteListContainer {
+	width: 29%;
+	padding: 30px;
+	margin: 10px 0 0 0;
+}
+
+.note {
+	margin: 20px;
+}
+
+.noteFormContainer {
+	display: flex;
+	flex-direction: column;
 }
