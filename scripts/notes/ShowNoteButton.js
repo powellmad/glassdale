@@ -3,6 +3,7 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showNotes") {
+        console.log(clickEvent)
         const customEvent = new CustomEvent("showNotesClicked")
         eventHub.dispatchEvent(customEvent)
     }
