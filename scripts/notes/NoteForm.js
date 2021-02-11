@@ -1,9 +1,11 @@
+import { useCriminals } from "../criminals/CriminalProvider.js"
 import { saveNote } from "./NoteDataProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
 
 const render = () => {
+    const criminalArray = useCriminals()
     
     contentTarget.innerHTML = `
     <h4>Create a Note:</h4>
@@ -11,17 +13,15 @@ const render = () => {
     <input type="date" id="note-date">
 
     <label for="note-suspect">Suspect:</label>
-    <input type="text" id="note-suspect">
+    <select id="note-suspect" class="criminalSelect">
+    ${criminalArray.map(criminal => `<option value="${ criminal.id }">${ criminal.name }</option>`)}
+    </select>
     
     <label for="note-author">Author:</label>
     <input type="text" id="note-author">
 
     <label for="note-text">Note:</label>
     <input type="text" id="note-text" placeholder="Start Note...">
-
-    <select id="noteForm--criminal" class="criminalSelect">
-    <option value="${ criminal.id }">${ criminal.name }</option>
-    </select>
 
     <button id="saveNote">Save Note</button>
     `
@@ -38,14 +38,12 @@ eventHub.addEventListener("click", clickEvent => {
         const suspect = document.getElementById("note-suspect").value
         const author = document.getElementById("note-author").value
         const text = document.getElementById("note-text").value
-        const criminal = document.getElementById("noteForm--criminal").value
         
         const newNote = {
             date: date,
             suspect: suspect,
             author: author,
-            text: text,
-            criminal: criminal
+            text: text
         }
         saveNote(newNote)
     }
