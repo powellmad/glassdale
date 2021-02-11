@@ -8,6 +8,11 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
 
+eventHub.addEventListener ("noteStateChanged", event => {
+    const allNotes = useNotes()
+    render(allNotes)
+})
+
 const render = (noteArray) => {
     const allNotesConvertedToStrings = noteArray.map(noteObject => {
         return NoteHTMLConverter(noteObject)
