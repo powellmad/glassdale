@@ -19,6 +19,10 @@ const render = () => {
     <label for="note-text">Note:</label>
     <input type="text" id="note-text" placeholder="Start Note...">
 
+    <select id="noteForm--criminal" class="criminalSelect">
+    <option value="${ criminal.id }">${ criminal.name }</option>
+    </select>
+
     <button id="saveNote">Save Note</button>
     `
 }
@@ -34,12 +38,14 @@ eventHub.addEventListener("click", clickEvent => {
         const suspect = document.getElementById("note-suspect").value
         const author = document.getElementById("note-author").value
         const text = document.getElementById("note-text").value
+        const criminal = document.getElementById("noteForm--criminal").value
         
         const newNote = {
             date: date,
             suspect: suspect,
             author: author,
-            text: text
+            text: text,
+            criminal: criminal
         }
         saveNote(newNote)
     }

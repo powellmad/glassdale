@@ -1,3 +1,5 @@
+import { ShowAssociatesButton } from "../associates/ShowAssociates.js"
+
 export const Criminal = (criminalObj) => {
     return `
         <div class="criminal">
@@ -7,6 +9,7 @@ export const Criminal = (criminalObj) => {
             <p>Arresting Officer: ${criminalObj.arrestingOfficer}</p>
             <p>${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
             <p>${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
+            ${ShowAssociatesButton(criminalObj)}
         </div>
     `
 }
