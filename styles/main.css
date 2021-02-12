@@ -6,13 +6,23 @@ input,
 select,
 textarea {
 	font-size: 16px;
-	line-height: 1.2;
+	line-height: 1.5;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: lightsteelblue;
+}
+
+header {
+	background-color: aliceblue;
+	padding: 10px;
+	margin: 5px;
 }
 
 .criminalList {
@@ -26,17 +36,25 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 15px;
 	margin: 10px;
 	width: 230px;
+	background-color: lightsteelblue;
 }
 
 .criminalList p {
 	margin: 0px;
 }
 
+h1 {
+	text-align: center;
+	justify-self: center;
+	padding-top: 20px;
+	font-size: 36px;
+}
+
 h3 {
 	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
-	
+	margin: 20px;
 }
 
 h4 {
@@ -63,20 +81,52 @@ p {
 	justify-content: space-around;
 }
 .criminalContainer{
-	width: 69%;
+	width: 78%;
+	background-color: aliceblue;
+	margin: 20px;
 }
 
 .noteListContainer {
-	width: 29%;
-	padding: 30px;
+	width: 22%;
+	padding: 10px;
 	margin: 10px 0 0 0;
 }
 
 .note {
-	margin: 20px;
+	margin: 15px;
+	border: 0;
+	padding: 20px;
+	background-color: aliceblue;
 }
 
 .noteFormContainer {
 	display: flex;
 	flex-direction: column;
+	background-color: aliceblue;
+	padding: 5px;
+}
+
+#showNotes {
+	margin: 20px 8px;
+}
+
+fieldset {
+	border: 0;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+form {
+	border: 0;
+	margin: 5px;
+	
+}
+
+form select, form input {
+	width: 95%;
+}
+
+form button {
+	width: 50%;
 }

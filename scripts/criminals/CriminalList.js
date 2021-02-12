@@ -20,7 +20,7 @@ const renderToDOM = criminalsArray => {
       }
     
       criminalContainer.innerHTML = `
-        <h3>Criminals</h3>
+        <h3>Glassdale Criminals</h3>
         <section class="criminalList">
         ${criminalHTML}
         </section>`

@@ -2,38 +2,52 @@
   "notes": [
     {
       "date": "2021-01-29",
-      "suspect": "Fritz",
+      "criminalId": 1,
       "author": "Mad",
       "text": "He is looking pretty suspicious",
       "id": 2
     },
     {
       "date": "2021-01-30",
-      "suspect": "Scort",
+      "criminalId": 2,
       "author": "Mad",
       "text": "Is it Scott? Scort?? Suspicious...",
       "id": 3
     },
     {
-      "date": "2021-02-01",
-      "suspect": "Asterin",
-      "author": "Madison",
-      "text": "She's been hiding a lot lately...",
-      "id": 4
-    },
-    {
       "date": "2021-01-31",
-      "suspect": "Tin",
+      "criminalId": 4,
       "author": "Mad",
       "text": "He was in a big hurry to leave us",
       "id": 5
     },
     {
       "date": "2021-02-01",
-      "suspect": "Jisie",
+      "criminalId": 5,
       "author": "Madison",
       "text": "She didn't teach this morning, so what was she doing?",
       "id": 6
+    },
+    {
+      "date": "2021-02-11",
+      "criminalId": 10,
+      "author": "Madison",
+      "text": "Evidence against her case",
+      "id": 8
+    },
+    {
+      "date": "2021-02-12",
+      "criminalId": 5,
+      "author": "Madison",
+      "text": "I hope this note works",
+      "id": 9
+    },
+    {
+      "date": "2021-02-12",
+      "criminalId": 8,
+      "author": "Madison",
+      "text": "Howe's alibi is suspect",
+      "id": 10
     }
   ]
 }
