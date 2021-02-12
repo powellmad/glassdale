@@ -12,7 +12,8 @@ const render = (criminalCollection) => {
         <fieldset>
             <label for="note-criminalId">Suspect:</label>
             <select id="note-criminalId" class="criminalSelect">
-            ${criminalCollection.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`)}.join("")
+                <option value="0">Please select a suspect...</option>
+                ${criminalCollection.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`)}.join("")
             </select>
         </fieldset>
         <fieldset>

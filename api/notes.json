@@ -15,13 +15,6 @@
       "id": 3
     },
     {
-      "date": "2021-02-01",
-      "criminalId": 3,
-      "author": "Madison",
-      "text": "She's been hiding a lot lately...",
-      "id": 4
-    },
-    {
       "date": "2021-01-31",
       "criminalId": 4,
       "author": "Mad",
@@ -36,18 +29,25 @@
       "id": 6
     },
     {
-      "date": "",
-      "criminalId": 63,
-      "author": "Madison",
-      "text": "Idk it's just a feeling....",
-      "id": 7
-    },
-    {
       "date": "2021-02-11",
       "criminalId": 10,
       "author": "Madison",
       "text": "Evidence against her case",
       "id": 8
+    },
+    {
+      "date": "2021-02-12",
+      "criminalId": 5,
+      "author": "Madison",
+      "text": "I hope this note works",
+      "id": 9
+    },
+    {
+      "date": "2021-02-12",
+      "criminalId": 8,
+      "author": "Madison",
+      "text": "Howe's alibi is suspect",
+      "id": 10
     }
   ]
 }
