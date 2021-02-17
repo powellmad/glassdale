@@ -31,7 +31,7 @@ header {
 	justify-content: space-evenly;
 }
 
-.criminalList div {
+.criminal {
 	border: 1px dotted black;
 	padding: 15px;
 	margin: 10px;
@@ -60,6 +60,15 @@ h3 {
 h4 {
 	font-size: 16pt;
 	margin: 10px;
+}
+
+h5 {
+	font-size: 12pt;
+	margin: 2px;
+}
+
+ul {
+	margin: 3px;
 }
 
 select {

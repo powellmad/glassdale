@@ -26,12 +26,12 @@ const renderToDOM = (crimCollection, crimFacCollection, facCollection) => {
         // Filtering to find relationships between facilities & criminals (into array)
         const arrayofCrimFacObj = crimFacCollection.filter(criminalFacility => criminalObj.id === criminalFacility.criminalId)
         // Convert relationship to facilities using map()
-        const arrayOfFacObj = arrayofCrimFacObj.map(criminalFacility => {
+        const facilities = arrayofCrimFacObj.map(criminalFacility => {
              const relatedFacObj = facCollection.find(facility => facility.id === criminalFacility.facilityId)
              return relatedFacObj
         })
         
-        criminalHTML += Criminal(criminalObj)
+        criminalHTML += Criminal(criminalObj, facilities)
       }
     
       criminalContainer.innerHTML = `
