@@ -2,11 +2,13 @@ let notes = []
 
 const eventHub = document.querySelector(".container")
 
+// 
 const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
+// Fetching Notes from our local api
 export const getNotes = () => {
     return fetch("http://localhost:8088/notes")
         .then(response => response.json())
@@ -15,6 +17,7 @@ export const getNotes = () => {
         })
 }
 
+// Saving a Note
 export const saveNote = note => {
     let stringifiedObj = JSON.stringify(note)
 
@@ -30,8 +33,11 @@ export const saveNote = note => {
     .then(dispatchStateChangeEvent)
 }
 
-export const useNotes = () => notes.slice()
+export const useNotes = () => {
+    return notes.slice()
+}
 
+// Deleting a Note
 export const deleteNote = noteId => {
     return fetch(`http://localhost:8088/notes/${noteId}`, {
         method: "DELETE"

@@ -16,11 +16,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
-	background-color: lightsteelblue;
+	background-color: midnightblue;
 }
 
 header {
-	background-color: aliceblue;
+	background-color: #b2b2cf;
 	padding: 10px;
 	margin: 5px;
 }
@@ -36,7 +36,7 @@ header {
 	padding: 15px;
 	margin: 10px;
 	width: 230px;
-	background-color: lightsteelblue;
+	background-color: #dcdcea;
 }
 
 .criminalList p {
@@ -82,7 +82,7 @@ p {
 }
 .criminalContainer{
 	width: 78%;
-	background-color: aliceblue;
+	background-color: #b2b2cf;
 	margin: 20px;
 }
 
@@ -96,13 +96,13 @@ p {
 	margin: 15px;
 	border: 0;
 	padding: 20px;
-	background-color: aliceblue;
+	background-color: #b2b2cf;
 }
 
 .noteFormContainer {
 	display: flex;
 	flex-direction: column;
-	background-color: aliceblue;
+	background-color: #b2b2cf;
 	padding: 5px;
 }
 
