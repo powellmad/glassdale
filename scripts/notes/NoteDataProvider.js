@@ -21,7 +21,7 @@ export const getNotes = () => {
 export const saveNote = note => {
     let stringifiedObj = JSON.stringify(note)
 
-    return fetch("http://localhost:8088/notes", {
+    return fetch("http://localhost:8088/db", {
         
         method: "POST",
         headers: {
@@ -39,7 +39,7 @@ export const useNotes = () => {
 
 // Deleting a Note
 export const deleteNote = noteId => {
-    return fetch(`http://localhost:8088/notes/${noteId}`, {
+    return fetch(`http://localhost:8088/db/${noteId}`, {
         method: "DELETE"
     })
         .then(getNotes)
