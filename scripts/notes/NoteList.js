@@ -11,7 +11,6 @@ eventHub.addEventListener("showNotesClicked", evt => {
 
 const render = (noteArray, criminalArray) => {
     contentTarget.innerHTML = noteArray.map(note => {
-        // debugger
         const relatedCriminalObj = criminalArray.find(criminal => criminal.id === note.criminalId)
         console.log(relatedCriminalObj)
     return NoteHTMLConverter(note, relatedCriminalObj)

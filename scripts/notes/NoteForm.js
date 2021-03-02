@@ -43,7 +43,7 @@ export const NoteForm = () => {
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
-        console.log("I saved my note")
+        // console.log("I saved my note")
         const date = document.getElementById("note-date").value
         const criminalId = document.getElementById("note-criminalId").value
         const author = document.getElementById("note-author").value

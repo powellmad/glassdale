@@ -1,22 +1,37 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { getCriminalFacilities, useCriminalFacilities } from "../facility/CriminalFacilityProvider.js"
+import { getFacilities, useFacilities } from "../facility/FacilityProvider.js"
 
 const eventHub = document.querySelector(".container")
 const criminalContainer = document.querySelector(".criminalContainer")
 
 export const CriminalList = () => {
   getCriminals()
+  .then(getCriminalFacilities)
+  .then(getFacilities)
   .then(() => {
     const criminalArray = useCriminals()
-    renderToDOM(criminalArray)
+    const criminalFacilitiesArray = useCriminalFacilities()
+    const facilitiesArray = useFacilities()
+
+    renderToDOM(criminalArray, criminalFacilitiesArray, facilitiesArray)
   })
 }
 
-const renderToDOM = criminalsArray => {
+const renderToDOM = (crimCollection, crimFacCollection, facCollection) => {
   let criminalHTML = ""
-      for (const criminalObj of criminalsArray) {
-        criminalHTML += Criminal(criminalObj)
+      for (const criminalObj of crimCollection) {
+        // Filtering to find relationships between facilities & criminals (into array)
+        const arrayofCrimFacObj = crimFacCollection.filter(criminalFacility => criminalObj.id === criminalFacility.criminalId)
+        // Convert relationship to facilities using map()
+        const facilities = arrayofCrimFacObj.map(criminalFacility => {
+             const relatedFacObj = facCollection.find(facility => facility.id === criminalFacility.facilityId)
+             return relatedFacObj
+        })
+        
+        criminalHTML += Criminal(criminalObj, facilities)
       }
     
       criminalContainer.innerHTML = `
